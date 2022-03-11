@@ -13,14 +13,12 @@ pipeline {
 
 			stage('Second') {
 				when{
-					allOf { branch 'main'; environment name: 'VARIABLE', value: 'true' }
-					echo "${VARIABLE}"
-					
-						}
+					allOf { branch 'main'; environment name: 'VARIABLE', value: 'true' echo "${VARIABLE}" }
+				    }
 				steps {
 					sh "echo 'Updating Second Stage' "
 					
-				}
+				      }
 			} 
 
 			stage('Third') {
