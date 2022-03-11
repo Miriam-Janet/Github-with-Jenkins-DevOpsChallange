@@ -7,23 +7,19 @@ pipeline {
 					script {
 							env.VARIABLE="true"
 						}
-
 				}
 			}
 
 
 			stage('Second') {
 				when{
-					environment name: 'VARIABLE', value: 'true'
-					echo ${VARIABLE}
+					allOf { branch 'main'; environment name: 'VARIABLE', value: 'true' }
+					echo "${VARIABLE}"
 					
 						}
 				steps {
 					sh "echo 'Updating Second Stage' "
 					
-					script {
-						
-					}
 				}
 			} 
 
