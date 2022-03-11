@@ -3,16 +3,16 @@ pipeline {
 		stages {
 			stage('First') {
 				steps {
-					sh "echo 'Step One'
-					env.VARIABLE='true' "
+					sh "echo 'Step One' "
+					env.VARIABLE='true' 
 				}
 			}
 
 
 			stage('Second') {
 				steps {
-					sh "echo 'Step Two'
-					echo 'Updating Second Stage' "
+					sh "echo 'Step Two' "
+					echo 'Updating Second Stage' 
 				}
 			} 
 
