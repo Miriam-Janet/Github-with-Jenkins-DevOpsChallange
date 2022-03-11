@@ -5,7 +5,7 @@ pipeline {
 				steps {
 					sh "echo 'Step One' "
 					script {
-						env.VARIABLE="true"
+						when { environment name: 'EXECUTE', value: 'true' }
 					}
 				}
 			}
@@ -15,7 +15,7 @@ pipeline {
 				steps {
 					sh "echo 'Step Two' echo 'Updating Second Stage' "
 					script {
-						echo ${VARIABLE}
+						echo ${EXECUTE}
 					}
 				}
 			} 
