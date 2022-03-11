@@ -3,7 +3,10 @@ pipeline {
 		stages {
 			stage('First') {
 				steps {
-					sh "echo 'Step One' " 
+					sh "echo 'Step One' "
+					script {
+						env.VARIABLE="true"
+					}
 				}
 			}
 
